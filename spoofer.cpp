@@ -7,7 +7,7 @@
 // define error for easier typing
 #define ERROR(msg) MessageBoxA(0, msg, "fotrousch spoofer", MB_OK | MB_ICONERROR); return 0;
 
-
+// taken from stackoverflow
 std::string random_string(size_t length)
 {
 	auto randchar = []() -> char
