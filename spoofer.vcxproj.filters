@@ -3,4 +3,20 @@
   <ItemGroup>
     <ClCompile Include="spoofer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="obfuscation">
+      <UniqueIdentifier>{e9fcdfae-346e-4c88-9d1b-13f8bfd24806}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="obfy.hpp">
+      <Filter>obfuscation</Filter>
+    </ClInclude>
+    <ClInclude Include="xorstr.hpp">
+      <Filter>obfuscation</Filter>
+    </ClInclude>
+    <ClInclude Include="lazy_importer.hpp">
+      <Filter>obfuscation</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
