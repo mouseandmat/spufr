@@ -82,9 +82,6 @@ auto spoof(int seed) -> int
 	{
 		// print shit
 		std::cout << xorstr_("[") << V(i) << xorstr_("/2345] rewriting value '") << random_string(LI_FIND(rand)() % N(32)) << xorstr_("' to '") << random_string(LI_FIND(rand)() % N(32)) << xorstr_("'\n");
-
-		// sleep
-		LI_FIND(Sleep)(N(4));
 	}
 	ENDFOR
 
@@ -98,14 +95,14 @@ auto spoof(int seed) -> int
 	HKEY key;
 
 	// open register
-	LI_FIND(RegOpenKeyA)(HKEY_LOCAL_MACHINE, xorstr_("SYSTEM\\ControlSet001\\Control\\IDConfigDB\\Hardware Profiles\\0001\\"), &key);
+	RegOpenKeyA(HKEY_LOCAL_MACHINE, xorstr_("SYSTEM\\ControlSet001\\Control\\IDConfigDB\\Hardware Profiles\\0001\\"), &key);
 
 	// define and set value
 	std::string value = random_string(N(12));
-	LI_FIND(RegSetValueExA)(key, xorstr_("HwProfileGuid"), N(0), REG_SZ, (LPBYTE)value.c_str(), LI_FIND(strlen)(value.c_str()) * sizeof(char));
+	RegSetValueExA(key, xorstr_("HwProfileGuid"), N(0), REG_SZ, (LPBYTE)value.c_str(), LI_FIND(strlen)(value.c_str()) * sizeof(char));
 
 	// close register
-	LI_FIND(RegCloseKey)(key);
+	RegCloseKey(key);
 
 	// inform user 
 	std::cout << xorstr_("\n[!] everything seems correct! done!\n\n");
